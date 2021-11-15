@@ -1,0 +1,42 @@
+{
+  "name": "noxkiwi/queue",
+  "description": "I am the collection of main components to queue and process message queues.",
+  "version": "1.0.0",
+  "type": "package",
+  "license": "proprietary",
+  "keywords": [
+    "Queue",
+    "Stack",
+    "RabbitMQ"
+  ],
+  "homepage": "https://nox.kiwi/",
+  "time": "2016-01-05",
+  "authors": [
+    {
+      "name": "Jan Nox",
+      "email": "jan.nox@pm.me",
+      "homepage": "https://nox.kiwi",
+      "role": "Lead Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.0.0",
+    "ext-sockets": "*",
+    "ext-bcmath": "*",
+    "ext-gd": "*",
+    "ext-http": "*",
+    "php-amqplib/php-amqplib": "*",
+    "noxkiwi/core": "*",
+    "noxkiwi/log": "*",
+    "noxkiwi/singleton": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*",
+    "roave/security-advisories": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "noxkiwi\\queue\\": "backend/class/"
+    }
+  }
+}
