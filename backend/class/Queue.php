@@ -4,6 +4,11 @@ namespace noxkiwi\queue;
 use noxkiwi\queue\Interfaces\QueueInterface;
 use noxkiwi\singleton\Singleton;
 use RuntimeException;
+use function file_put_contents;
+use function is_dir;
+use function mkdir;
+use function serialize;
+use function sprintf;
 
 /**
  * I am the main Queue class.

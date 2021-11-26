@@ -1,6 +1,11 @@
 <?php declare(strict_types = 1);
 namespace noxkiwi\queue;
 
+use function hash;
+use function microtime;
+use function mt_rand;
+use function substr;
+
 /**
  * I am the main Message object
  *

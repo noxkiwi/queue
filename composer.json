@@ -3,7 +3,7 @@
   "description": "I am the collection of main components to queue and process message queues.",
   "version": "1.0.0",
   "type": "package",
-  "license": "proprietary",
+  "license": "GPL-3.0-or-later",
   "keywords": [
     "Queue",
     "Stack",
@@ -26,9 +26,9 @@
     "ext-gd": "*",
     "ext-http": "*",
     "php-amqplib/php-amqplib": "*",
-    "noxkiwi/core": "*",
-    "noxkiwi/log": "*",
-    "noxkiwi/singleton": "*"
+    "noxkiwi/core": "dev-master",
+    "noxkiwi/log": "dev-master",
+    "noxkiwi/singleton": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "*",
