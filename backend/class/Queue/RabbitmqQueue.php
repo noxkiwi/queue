@@ -7,6 +7,7 @@ use noxkiwi\queue\Queue;
 use PhpAmqpLib\Channel\AMQPChannel;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
+use function serialize;
 
 /**
  * I am the RabbitMQ Queue manager.
