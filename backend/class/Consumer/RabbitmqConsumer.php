@@ -52,7 +52,7 @@ abstract class RabbitmqConsumer extends Consumer
         $this->logDebug(" [*] - Hostname  is {$env->get("queue>$identifier>host")}");
         $this->logDebug(" [*] - Port      is {$env->get("queue>$identifier>port")}");
         $this->logDebug(" [*] - User name is {$env->get("queue>$identifier>user")}");
-        $this->logDebug(" [*] - Password  is hidden, me Sorree.");
+        $this->logDebug(' [*] - Password  is hidden, me Sorree.');
         $this->logDebug(" [*] - vHost     is {$env->get("queue>$identifier>vhost")}");
         $this->connection = new AMQPStreamConnection(
             $env->get("queue>$identifier>host"),
