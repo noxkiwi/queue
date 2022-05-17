@@ -35,24 +35,24 @@ abstract class RabbitmqQueue extends Queue
      *
      * @throws \noxkiwi\singleton\Exception\SingletonException
      */
-    public function __construct(string $identifier)
+    protected function __construct(string $identifier)
     {
         parent::__construct($identifier);
         $this->environment = Environment::getInstance();
         $this->connection  = new AMQPStreamConnection(
-            $this->environment->get("queue>{$this->identifier}>host"),
-            $this->environment->get("queue>{$this->identifier}>port"),
-            $this->environment->get("queue>{$this->identifier}>user"),
-            $this->environment->get("queue>{$this->identifier}>pass"),
-            $this->environment->get("queue>{$this->identifier}>vhost")
+            $this->environment->get("queue>$this->identifier>host"),
+            $this->environment->get("queue>$this->identifier>port"),
+            $this->environment->get("queue>$this->identifier>user"),
+            $this->environment->get("queue>$this->identifier>pass"),
+            $this->environment->get("queue>$this->identifier>vhost")
         );
         $this->channel     = $this->connection->channel();
         $this->channel->queue_declare(
-            $this->environment->get("queue>{$this->identifier}>queue>name"),
-            $this->environment->get("queue>{$this->identifier}>queue>passive"),
-            $this->environment->get("queue>{$this->identifier}>queue>durable"),
-            $this->environment->get("queue>{$this->identifier}>queue>exclusive"),
-            $this->environment->get("queue>{$this->identifier}>queue>autodelete")
+            $this->environment->get("queue>$this->identifier>queue>name"),
+            $this->environment->get("queue>$this->identifier>queue>passive"),
+            $this->environment->get("queue>$this->identifier>queue>durable"),
+            $this->environment->get("queue>$this->identifier>queue>exclusive"),
+            $this->environment->get("queue>$this->identifier>queue>autodelete")
         );
     }
 
@@ -63,7 +63,7 @@ abstract class RabbitmqQueue extends Queue
     {
         parent::add($message);
         $amqpMessage = new AMQPMessage(serialize($message));
-        $this->channel->basic_publish($amqpMessage, $this->environment->get("queue>{$this->identifier}>exchange>name"));
+        $this->channel->basic_publish($amqpMessage, $this->environment->get("queue>$this->identifier>exchange>name"));
     }
 }
 
