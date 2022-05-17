@@ -31,7 +31,7 @@ abstract class Queue extends Singleton implements QueueInterface
      *
      * @param string $identifier
      */
-    public function __construct(string $identifier)
+    protected function __construct(string $identifier)
     {
         parent::__construct();
         $this->identifier = $identifier;

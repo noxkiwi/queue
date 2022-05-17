@@ -32,6 +32,8 @@ abstract class RabbitmqQueue extends Queue
      * RabbitmqConsumer constructor.
      *
      * @param string $identifier
+     *
+     * @throws \noxkiwi\singleton\Exception\SingletonException
      */
     public function __construct(string $identifier)
     {

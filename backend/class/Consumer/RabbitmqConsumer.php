@@ -40,6 +40,8 @@ abstract class RabbitmqConsumer extends Consumer
      * RabbitmqConsumer constructor.
      *
      * @param string $identifier
+     *
+     * @throws \noxkiwi\singleton\Exception\SingletonException
      */
     public function __construct(string $identifier)
     {
